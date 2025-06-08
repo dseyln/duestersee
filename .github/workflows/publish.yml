@@ -1,0 +1,25 @@
+name: publish
+on:
+  push:
+    branches:
+      - main
+permissions:
+  content: write
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        name: Checkout repository
+      - name: Configure Git Credentials
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+      - uses: actions/setup-python@v5
+        name: Configure python
+        with:
+          python-version: 3.x
+      - name: Get theme
+        run: pip install mkdocs-windmill
+      - name: Deploy site
+        run: mkdocs gh-deploy --force
