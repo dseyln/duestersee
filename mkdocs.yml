@@ -1,1 +1,19 @@
-site_name: My Docs
+site_name: Düstersee
+site_author: '@dseyln'
+copyright: Content managed by yulana (dseyln)
+
+docs_dir : 'docs'
+
+nav:
+  - Düstersee: index.md
+
+theme: windmill
+locale: en
+
+repo_url: https://github.com/dseyln/duestersee
+edit_uri_template: edit/main/docs/{path}
+
+extra:
+  version: 'v0.0.1a'
+  article_nav_top: false
+  article_nav_bottom: false
